@@ -1,0 +1,81 @@
+{% extends 'home/index.html' %}
+{% load static %}
+
+{% block titulo %}
+
+                <h1 style="color:rgb(255, 255, 255); "
+                    >Turismo Prattos</h1>
+
+{% endblock %}
+
+
+
+
+{% block subtitulo %}
+<div class="transbox">
+<h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+                            >Nuestro Blog</h1>
+
+</div>
+{% endblock %}
+
+
+{% block contenido %}
+
+
+    
+    <div class="row" >
+        <div class="col-md-8" >
+        
+        {% for post in posts  %}
+        
+        <div class="card mb-4"  >
+
+            <img class="card-img-top" src="{{ post.image_header.url }}" alt="Card image cap" height="350" >
+            <div class="card-body">
+            <h2 class="card-title">{{post.titulo}}</h2>
+            <p class="card-text">{{post.posteo|safe|truncatechars:300}}</p>
+            
+            <a href= '{% url 'postss:details' post.id %}' class="btn btn-primary" >Detalles </a>
+            
+            </div>
+            <div class="card-footer text-muted"> 
+                Escrito el {{post.creado}}
+                <a href="#">{{post.user.username}}</a>
+            </div>
+            </div>
+            {% endfor %} 
+            <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+            </ul>
+        </div>
+        
+        <a href= '{% url 'posteo' %}' class="btn btn-primary" > Postear </a>
+
+{% endblock %}
+
+{% block pie %}
+<section>
+    <div class="text-center">
+        <h2 style="background-color:rgb(190, 255, 244);">Si no encontraste lo que buscas,<br> Ingresa tu posteo</h2>
+        
+        <h5 style="background-color:rgb(190, 255, 244);">FORMULARIO<br> 
+        </h5>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

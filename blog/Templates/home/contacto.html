@@ -1,0 +1,52 @@
+{% extends 'home/index.html' %}
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-0">Porque estamos para vos!</h1>
+{% endblock %}
+
+
+{% block subtitulo %}
+<div class="transbox">
+<h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+    >Conoce nuestros medios para contactarnos.</h1>
+</div>    
+{% endblock %}
+
+
+
+
+{% block contenido %}
+
+<div class="transbox">
+    <h3 >Nuestro local<br></h3>
+</div>
+<h4>Av. Corrientes N° 1569, CABA.<br>
+Tel: 4356-4821<br>
+Cel: 1522335256<br>
+E-mail: turismoprattos@gmail.com<br></h4><br><br><br>
+
+
+<!--
+<div align="center">
+
+
+<form action="" method="post" > {% csrf_token %}
+    <div class="transbox">
+    <h3 
+    >Completa el formulario y nos pondremos en contacto con vos.</h3>
+</div>
+
+    <table>
+        
+        {{solcontactoform.as_table}}
+
+    <table/>
+
+    <button type="submit" value="Ingresar" >Ingresar</button>
+    
+</form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'home/index.html' %}
+{% load static %}
+
+{% block titulo %}
+
+                <h1 style="color:rgb(255, 255, 255); "
+                    >Turismo Prattos</h1>
+
+{% endblock %}
+
+
+
+{% block subtitulo %}
+<div class="transbox">
+<h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+                            >Nuestro Blog</h1>
+
+</div>
+{% endblock %}
+
+
+{% block contenido %}
+asass
+
+
+    
+    <div class="card mb-4"  >
+
+        <img class="card-img-top" src="{{ post.image_header.url }}" alt="Card image cap" height="350" >
+        <div class="card-body">
+        <h2 class="card-title">{{post.titulo}}</h2>
+        <p class="card-text">Posteo <i>{{post.posteo}}</i></p>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

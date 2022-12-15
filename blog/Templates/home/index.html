@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <title>Turismo Prattos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <!-- Favicon-->
+        <link id="favicon" rel="shortcut icon" href='static\assets\favicon2.ico' type="image/x-icon">
+        <link rel="icon" href='static\assets\favicon2.ico' type="image/x-icon">
+        <link href='{% static 'css/styles.css' %}' rel="stylesheet" />
+    </head>
+    <header class="py-5 bg-opacity-10 " style="background-image: url('static/assets/imagenes/TITULO.png'); 
+                                                        background-repeat: no-repeat; background-size: 100% 100%">
+        <div class="container">
+            <div class="text-center my-5">
+            </div>
+        </div>
+    </header>
+    <body>
+        <!-- Imagen de fondo-->
+                <style>
+                    body {
+                        background-image: url('static/assets/imagenes/fondo.jpg');
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        background-size: 100% 100%;
+                        }
+                        
+                    
+                    
+                    div.transbox {
+                        margin: 30px;
+                        background-color: #ffffff;
+                        
+                        opacity: 0.8;
+                    }
+                    
+                    div.transbox h3 {
+                        margin: 0%;
+                        font-weight: bolder;
+                        color: #0000FF;
+                        text-align: center;
+                    }
+
+                    div.transbox h1 {
+                        margin: 0%;
+                        font-weight: bolder;
+                        color: #000000;
+                        text-align: center;
+                    }
+                    
+                </style>
+        <nav class="navbar navbar-dark bg-dark static-top">
+            {% block botones %}
+                <div class="container">
+                    <a class="navbar-brand" href={% url 'Home' %}>Home</a>
+                    <a class="navbar-brand" href={% url 'Nosotros' %}>Acerca de Nosotros</a>
+                    <a class="navbar-brand" href={% url 'Contacto' %}>Contacto</a>
+                    <a class="navbar-brand" href={% url 'Blog' %}>Blog</a>
+                    <a class="navbar-brand" href={% url 'login' %}>Ingresar</a>
+                    <a class="navbar-brand" href={% url 'logout' %}>Salir</a>
+                    <a class="navbar-brand" href={% url 'register' %}>Registrarse</a>
+                    
+                    
+                    
+                    <!--Ingresar al admin de django
+                    <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/">Ingresar</a>-->
+                </div>
+            {% endblock %}
+        </nav>
+        
+        <section class="call-to-action text-white text-center" >
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        {% block titulo %}
+                        <h1 class="mb-0">Estan listos para vivir su proxima EXPERIENCIA!</h1>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="showcase text-center">
+            <div class="container-fluid p-0">
+                    <div class="showcase-text">
+                        {% block subtitulo %}
+                        <div class="transbox">
+                        <h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+                            >Conoce nuestra oferta pensada para vos</h1>
+                        </div>  
+                        {% endblock %}
+                    </div>
+            </div>
+        </section>
+        {% block contenido %}
+        <section class="text-white text-center" >
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="
+                                background-image: url('assets/imagenes/bg-showcase-1.jpg')"></div>
+                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                            {% block seccion1 %}
+                            <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" src="static/assets/imagenes/destino1.jpg" alt="..." />
+                            <h2 style="background-color:rgb(6, 133, 59);">Tu Proximo DESTINO!</h2>
+                            <h4 style="background-color:rgb(6, 133, 59);"
+                            >Podes encontrar todos los lugares para viajar que tenemos disponibles 
+                            para vos en la seccion de Destinos en Elige tu Experiencia.</h4 >
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>    
+        <section class="text-white text-center" >
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
+                        <div class="col-lg-6 my-auto showcase-text">
+                            {% block seccion2 %}
+                            <img class="img-fluid rounded-circle mb-3" style="width:487px;height:227px" src="static/assets/imagenes/hotel1.jpg" alt="..." />
+                            <h2 style="background-color:rgb(6, 133, 59);">El Hotel de tus SUEÑOS!</h2>
+                            <h4 style="background-color:rgb(6, 133, 59);"
+                            >Podes encontrar todos los hospedajes que tenemos disponibles 
+                            para vos en la seccion de Hoteles en Elige tu Experiencia.</h4 >
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section class="text-white text-center" >
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
+                        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                            {% block seccion3 %}
+                            <img class="img-fluid rounded-circle mb-3" style="width:487px;height:227px" src="static/assets/imagenes/excursion1.jpg" alt="..." />
+                            <h2 style="background-color:rgb(6, 133, 59);">La EXCURSION Deseada!</h2>
+                            <h4 style="background-color:rgb(6, 133, 59);"
+                            >Podes encontrar todos las actividades que tenemos preparadas 
+                            para vos en la seccion de Excursiones en Elige tu Experiencia.</h4 >
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+        
+            
+        
+        {% endblock %}
+            
+        
+    
+        <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        {% block casipie %}
+                        <h2 class="mb-4">Elige ahora tu siguiente AVENTURA!</h2>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% block pie %}
+<section>
+    <div class="text-center">
+        <h2 style="background-color:rgb(190, 255, 244);">¿No encuentras lo que quieres?<br> Ingresa a Nuestro Blog</h2>
+        <a href={% url 'Home' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
+            src="static/assets/imagenes/blog2.jpg" alt="..." /></a>
+        <h5 style="background-color:rgb(190, 255, 244);">Puedes clickear en la imagen e ingresar a nuestro blog.<br> 
+        Ahi podras compartir lo que deseas realizar.<br> 
+        Esto sera visto por nosotros y nos contactaremos con vos.</h5>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+        <!-- Footer-->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+        
+                        <!-- textos pie de pagina-->
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href={% url 'Nosotros' %}>Acerca de Nosotros</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href={% url 'Contacto' %}>Contacto</a></li>
+                            <li class="list-inline-item">⋅</li>
+                        
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. All Rights Reserved.</p>
+                    </div>
+
+                    <!-- logos de facebook twiter e instagram-->
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </body>
+</html>
